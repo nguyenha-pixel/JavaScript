@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background-color: #f9f9f9;
+        }
+        .fruit-box {
+            border: 1px solid #999;
+            background-color: #fff;
+            padding: 20px 28px;
+            width: 300px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+        .fruit-box h2 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        #ten_hoa_qua {
+            flex: 1;
+            padding: 6px 8px;
+            font-size: 14px;
+        }
+        button {
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #ket_qua {
+            font-size: 18px;
+            font-weight: bold;
+            color: #222;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fruit-box">
+        <h2>Giá hoa quả</h2>
+        <div class="input-group">
+            <input type="text" id="ten_hoa_qua" placeholder="Nhập tên hoa quả...">
+            <button type="button" onclick="xemGia()">Xem giá</button>
+        </div>
+        <div id="ket_qua"></div>
+    </div>
+
+    <script>
+        function xemGia() {
+            let tenHoaQua = document.getElementById("ten_hoa_qua").value.trim().toLowerCase();
+            let ketQua = "";
+
+            switch (tenHoaQua) {
+                case "ổi":
+                    ketQua = "20000 VNĐ/kg";
+                    break;
+                case "dưa hấu":
+                    ketQua = "20000 VNĐ/kg";
+                    break;
+                case "táo":
+                    ketQua = "30000 VNĐ/kg";
+                    break;
+                case "cam":
+                    ketQua = "40000 VNĐ/kg";
+                    break;
+                case "chôm chôm":
+                    ketQua = "40000 VNĐ/kg";
+                    break;
+                case "măng cụt":
+                    ketQua = "50000 VNĐ/kg";
+                    break;
+                default:
+                    ketQua = "Tìm không thấy";
+            }
+
+            document.getElementById("ket_qua").textContent = ketQua;
+        }
+    </script>
+</body>
+</html>

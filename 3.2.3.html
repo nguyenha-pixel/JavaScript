@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background-color: lightpink;
+        }
+        .days-box {
+            border: 1px solid gray;
+            background-color: palevioletred;
+            padding: 18px 22px;
+            width: 310px;
+            box-shadow: 0 2px 6px lightskyblue;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        #thang {
+            flex: 1;
+            padding: 6px 8px;
+            font-size: 15px;
+        }
+        button {
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #ket_qua {
+            font-size: 17px;
+            color: #222;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="days-box">
+        <div class="input-group">
+            <input type="number" id="thang" min="1" max="12" placeholder="Nhập tháng (1 - 12)">
+            <button type="button" onclick="tinhSoNgay()">Tính số ngày</button>
+        </div>
+        <div id="ket_qua"></div>
+    </div>
+
+    <script>
+        function tinhSoNgay() {
+            let thang = parseInt(document.getElementById("thang").value);
+            let thongBao = "";
+
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    thongBao = "Tháng " + thang + " có 31 ngày";
+                    break;
+                case 2:
+                    thongBao = "Tháng 2 có 28 hoặc 29 ngày";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    thongBao = "Tháng " + thang + " có 30 ngày";
+                    break;
+                default:
+                    thongBao = "Vui lòng nhập tháng hợp lệ (từ 1 đến 12)";
+            }
+
+            document.getElementById("ket_qua").textContent = thongBao;
+        }
+    </script>
+</body>
+</html>
